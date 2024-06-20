@@ -1,6 +1,4 @@
 spring:
-  application:
-     name: PRODUCT-SERVICE-GIT
   datasource:
     url: jdbc:mysql://localhost:3306/online_shopping
     username: root
