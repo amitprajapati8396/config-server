@@ -22,3 +22,30 @@ resilience4j:
           - java.net.SocketTimeoutException
         ignore-exceptions:
           - java.lang.IllegalArgumentException
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    hostname: localhost
+    preferIpAddress: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+  info:
+    env:
+      enabled: true
+  metrics:
+    enable:
+      all: true
+
+          
